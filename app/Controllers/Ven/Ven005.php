@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Controllers\Ven;
+
+use App\Controllers\Tb_basicas\Tb_basicas;
+
+class Ven005 extends Tb_basicas
+{
+    public function __construct()
+    {
+        $this->titulo = "Cadastro TV";
+        $this->modelo = "plano_tv";
+
+        $this->tbs_crud  = ['form_basicos' => $this->modelo];
+    }
+    public function preInsUpd($dados)
+
+    {
+        $dados["DESCRICAO"] = remove_acentos($dados["DESCRICAO"]);
+        return $dados;
+    }
+}

@@ -1,0 +1,1 @@
+var table_empresa = initDataTable({ idTab: 'table_empresa' });

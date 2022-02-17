@@ -1,0 +1,1 @@
+var tb_basicas = initDataTable({ idTab: 'tb_basicas' });

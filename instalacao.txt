@@ -1,0 +1,40 @@
+PASSO A PASSO PARA RODAR O PROJETO NO WINDOWS:
+
+1. APOS DESCOMPACTAR O PROJETO NO HTDOCS DO XAMPP.
+
+2. RENOMEI A PASTA PROJETO_BASE PARA O NOME DO SEU PROJETO.
+
+3. ENTRE NO ARQUIVO: \app\Config\App.php
+	na seguinte linha: public $baseURL = 'nome_do_seu_projeto_aqui'
+	
+4. ENTRE NO ARQUIVO: \app\Config\Constants.php   e configue
+
+	defined('NOME_SISTEMA')      || define('NOME_SISTEMA', 'BASE_PROJETO');//criar uma imagem .png com o mesmo nome do projeto para ser o logo em:  assets/img/empresa
+	defined('PREFIXO_TB')      || define('PREFIXO_TB', 'projeto_base_'); //prefixo para as tabelas do banco de dados, se n usar, deixa em branco
+	defined('COR_NAVBAR')      || define('COR_NAVBAR', 'navbar-light navbar-lightblue'); //COR TO TOPO
+	defined('BARRA_NAVEGACAO')      || define('BARRA_NAVEGACAO', 'T'); // BARRA DE NAVEGAR, DO SISTEMA T = TOP, L=LEFT
+	
+5. ENTRE NO ARQUIVO: \app\Config\Database.php   
+	CONFIGURAR OS DADOS DE ACESSO DO BANCO
+	
+6. ENTRAR NO ARQUIVO scripts.sql
+	substituir o prefixo: base_projeto_   pelo nome do prefixo das tabelas do banco.
+	rodar o script alterado na base de dados
+	
+7.   ENTRAR NO ARQUIVO C:\xampp\apache\conf\extra\httpd-vhosts.conf   e acrescentar a seguinte linha
+
+<VirtualHost *:80>
+    DocumentRoot C:/xampp/htdocs/nome_projeto/public
+    ServerName nome_projeto
+</VirtualHost>	
+
+8. ENTRAR NO ARQUIVO C:\Windows\System32\drivers\etc\hosts   e acrescentar a seguinte linha com nome do projeto do passo anterior
+
+	127.0.0.1       nome_projeto
+	
+9. startar ou restartar o apache
+
+10. ACESSAR O SISTEMA ATRAVES DO NOME DO PROJETO:
+	nome_projeto/
+	
+11: usuario: suporte       senha: suporte@admin	
